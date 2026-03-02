@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    /* Full black background */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    /* Same as body */
+    padding: 20px 60px;
+    position: relative;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-left: 130px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Hover Effect for Logo */
+.logo a:hover {
+    color: aqua;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-links li {
+    margin-left: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: aqua;
+    /* Underline color */
+    transition: width 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: aqua;
+    /* Text color change */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    #menu-toggle:checked+.menu-icon+.nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.head-main {
+    color: white;
+    margin-top: 150px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.head {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 48px;
+    color: #66fcf1;
+    /* Softer Aqua */
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    animation: cyberReveal 1.5s ease-out forwards,
+        neonGlow 2s ease-in-out infinite alternate;
+}
+
+/* Smooth Reveal Animation */
+@keyframes cyberReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Soft Neon Glow */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #66fcf1,
+            0 0 10px #66fcf1;
+    }
+
+    to {
+        text-shadow: 0 0 12px #66fcf1,
+            0 0 24px #66fcf1;
+    }
+}
+
+.para {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    color: white;
+    /* Soft aqua-light */
+
+    max-width: 750px;
+    margin: 25px auto 0;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(25px);
+    animation: paraReveal 1.5s ease-out forwards;
+    animation-delay: 1.6s;
+}
+
+/* Smooth Fade Animation */
+@keyframes paraReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cyber-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    margin-top: 35px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    color: #66fcf1;
+    text-decoration: none;
+
+    border: 2px solid #66fcf1;
+    background: transparent;
+    border-radius: 5px;
+
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: btnReveal 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    /* After h1 + paragraph */
+}
+
+/* Slide-in Reveal */
+@keyframes btnReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Fill Animation */
+.cyber-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: #66fcf1;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.cyber-btn:hover::before {
+    width: 100%;
+}
+
+/* Hover Effects */
+.cyber-btn:hover {
+    color: #000;
+    box-shadow: 0 0 10px #66fcf1,
+        0 0 20px #66fcf1;
+    transform: translateY(-3px);
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    margin-top: 35px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    color: #8ffaf2;
+    text-decoration: none;
+
+    background: transparent;
+    border: 2px solid #8ffaf2;
+    border-radius: 5px;
+
+    transition: border-color 0.3s ease, color 0.3s ease;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    animation: btnShow 1s ease forwards;
+    animation-delay: 2.6s;
+}
+
+@keyframes btnShow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect */
+.contact-btn:hover {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.cyber-btn,
+.contact-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    /* center + spacing */
+}
+
+.head1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.head1 span {
+    color: aqua;
+}
+
+.service-box {
+    width: 300px;
+    padding: 30px;
+    background: #111;
+    border: 1px solid #1f1f1f;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for whole box */
+.service-box:hover {
+    transform: translateY(-10px);
+    border-color: #8ffaf2;
+    box-shadow: 0 0 20px rgba(143, 250, 242, 0.4);
+}
+
+/* Heading */
+.head3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Paragraph */
+.para1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: white;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+/* Button */
+.learn-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #8ffaf2;
+    color: #8ffaf2;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Button hover */
+.learn-btn:hover {
+    background: #8ffaf2;
+    color: #000;
+}
+
+/* Change text color when box hover */
+.service-box:hover .head3,
+.service-box:hover .para1 {
+    color: #8ffaf2;
+}
+
+.service-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    padding: 60px 80px;
+}
+
+.head1-down {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+
+.stats-container {
+    display: flex;
+    /* Make items in one row */
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Align vertically */
+    padding: 70px 150px;
+    /* Space inside parent */
+}
+
+/* Optional - center text */
+.stats-container div {
+    text-align: center;
+}
+
+.stats-section {
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    padding-bottom: 0px;
+
+    /* Gradient Background */
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+    background-size: 200% 200%;
+
+    animation: gradientMove 8s ease infinite;
+}
+
+/* Animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.head5-footer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.para-footer {
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: grey;
+    margin: 15px 0;
+    text-decoration: none;
+    /* Removes underline */
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #000);
+    color: white;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Remove default paragraph margin */
+.footer-bottom p {
+    margin: 0;
+}

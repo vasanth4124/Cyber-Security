@@ -1,0 +1,166 @@
+.head1-about {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: 5px;
+}
+
+.para-about {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: white;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+/* Container */
+.info-container {
+    display: flex;
+    flex-direction: row;
+    /* Stack vertically */
+    align-items: center;
+    gap: 5px;
+    margin: 60px auto;
+}
+
+/* Wide Rectangle Box */
+.info-box {
+    width: 650px;
+    /* Increased width */
+    max-width: 90%;
+    /* Responsive safety */
+    padding: 30px 35px;
+    margin-left: 65px;
+    background-color: #0f0f0f;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    border-radius: 4px;
+    /* More rectangle look */
+    transition: all 0.4s ease;
+}
+
+/* Heading */
+.info-box h3 {
+    color: rgba(0, 255, 255, 0.8);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Paragraph */
+.info-box p {
+    color: rgb(145, 144, 144);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.info-box p:hover {
+    color: rgb(44, 216, 216);
+}
+
+/* Hover Effect */
+.info-box:hover {
+    background-color: rgba(0, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
+}
+
+/* Animation Base */
+.info-box {
+    opacity: 0;
+}
+
+/* First box animation (Left → Right) */
+.info-box:nth-child(1) {
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Second box animation (Right → Left) */
+.info-box:nth-child(2) {
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.head1-number {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Small Experience Box */
+.experience-box {
+    width: 170px;
+    /* Decreased size */
+    height: 100px;
+    background-color: #0f0f0f;
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Content Styling */
+.experience-box h3 {
+    font-size: 26px;
+    color: rgba(0, 255, 255, 0.9);
+    margin: 0;
+}
+
+.experience-box p {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+/* Hover Effect (Only Border Changes) */
+.experience-box:hover {
+    border: 2px solid aqua;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* Container */
+.experience-container {
+    display: flex;
+    justify-content: center;   /* Removes extra outer space */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;                  /* Smaller gap */
+    margin: 40px auto;         /* Reduced top/bottom space */
+    padding: 0 5px;            /* Less side spacing */
+}

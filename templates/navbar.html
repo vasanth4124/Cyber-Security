@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <title>Black Theme Navbar</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="">DARKBYTE HUB</a></div>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+</body>
+
+</html>
