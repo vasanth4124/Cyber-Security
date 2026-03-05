@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<center>
+    <h1 class="head1-train">CYBER <a href="">TRAINING</a>/<a href="{% url 'trainer' %}">TRAINERS</a></h1>
+    <hr width="480px" style="margin-left: 160px; color: green;">
+</center>
+
+<div class="ceo-container">
+    <div class="ceo-card">
+        <img src="{% static 'images/ceo.jpeg' %}" alt="CEO">
+
+        <div class="ceo-overlay">
+            <h3 class="ceo-name">CHIYAAN SARATHY</h3>
+            <p class="ceo-role">CEO / FOUNDER</p>
+            <a href="#" class="ceo-btn">ABOUT HIM</a>
+        </div>
+    </div>
+
+    <div class="ceo-card">
+        <img src="{% static 'images/full stack.jpeg' %}" alt="CEO">
+
+        <div class="ceo-overlay">
+            <h3 class="ceo-name">MADHAN RAJ</h3>
+            <p class="ceo-role">FRONT END / TRAINER</p>
+            <a href="#" class="ceo-btn">ABOUT HIM</a>
+        </div>
+    </div>
+
+    <div class="ceo-card">
+        <img src="{% static 'images/AI.jpeg' %}" alt="CEO" style="
+    width: 100%;
+    max-width: 420px;
+    height: 550px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    object-fit: cover;
+  ">
+
+        <div class="ceo-overlay">
+            <h3 class="ceo-name">SOUNDER RAJ</h3>
+            <p class="ceo-role">AL/ML / TRAINER</p>
+            <a href="#" class="ceo-btn">ABOUT HIM</a>
+        </div>
+    </div>
+
+    <div class="ceo-card">
+        <img src="{% static 'cyber/static/images/front.png' %}" alt="CEO">
+
+        <div class="ceo-overlay">
+            <h3 class="ceo-name">VASANTHA <br> KUMAR</h3>
+            <p class="ceo-role">FULL STACK / TRAINER</p>
+            <a href="#" class="ceo-btn">ABOUT HIM</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

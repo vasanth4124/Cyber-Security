@@ -4,3 +4,15 @@ def home(request):
 
 def about(request):
     return render(request,'about.html')
+
+def services(request):
+    return render(request,'services.html')
+
+def training(request):
+    return render(request,'training.html')
+
+def trainer(request):
+    return render(request,'trainer.html')
+
+def contact(request):
+    return render(request,'contact.html')

@@ -1,0 +1,162 @@
+.head1-train {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: 'Audiowide', cursive;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: 5px;
+}
+
+.head1-train a {
+    text-decoration: none;
+    color: green;
+}
+
+.head3-train {
+    font-family: 'Audiowide', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.para1-train {
+    font-family: 'Audiowide', cursive;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: white;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+/* ===== BOX MODEL CONTAINER ===== */
+.train-box {
+    width: 360px;
+    padding: 30px;
+    margin: 50px auto;
+
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+
+    background-color: #0a0f0a;
+
+    box-shadow: 0 0 15px #00ff88;
+
+    text-align: center;
+
+    transition: 0.4s ease-in-out;
+
+    animation: greenGlow 2s infinite alternate;
+
+}
+
+/* Hover Lift Effect */
+.train-box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 35px #00ff88;
+}
+
+/* Paragraph Hover Animation */
+.para1-train p {
+    transition: 0.3s ease;
+}
+
+.para1-train p:hover {
+    color: #00ff88;
+    transform: translateX(8px);
+}
+
+/* ===== BUTTON STYLE ===== */
+.train-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+
+    border: 2px solid #00ff88;
+    border-radius: 30px;
+
+    text-decoration: none;
+    color: #00ff88;
+    font-family: 'Audiowide', cursive;
+
+    transition: 0.4s ease;
+}
+
+/* Button Hover */
+.train-btn:hover {
+    background-color: #00ff88;
+    color: black;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* ===== GREEN GLOW ANIMATION ===== */
+@keyframes greenGlow {
+    from {
+        box-shadow: 0 0 10px #00ff88;
+    }
+
+    to {
+        box-shadow: 0 0 30px #00ff88;
+    }
+}
+
+/* ===============================
+   PARENT CONTAINER ANIMATION
+================================= */
+.train-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    gap: 60px;
+    margin: 10px auto;
+    max-width: 1200px;
+
+    opacity: 0;
+    animation: containerFade 1s ease forwards;
+}
+
+/* Parent fade-in */
+@keyframes containerFade {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   BOX ANIMATION (LEFT - RIGHT)
+================================= */
+
+.train-box {
+    opacity: 0;
+    animation: boxReveal 0.9s ease forwards;
+}
+
+/* First box → from LEFT */
+.train-box:nth-child(1) {
+    transform: translateX(-80px);
+    animation-delay: 0.6s;
+}
+
+/* Second box → from RIGHT */
+.train-box:nth-child(2) {
+    transform: translateX(80px);
+    animation-delay: 1s;
+}
+
+/* Third box → from LEFT */
+.train-box:nth-child(3) {
+    transform: translateX(-80px);
+    animation-delay: 1.4s;
+}
+
+/* Animation */
+@keyframes boxReveal {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

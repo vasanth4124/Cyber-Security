@@ -1,0 +1,227 @@
+/* ===============================
+   PREMIUM CEO CARD
+================================= */
+.ceo-card {
+    width: 340px;
+    height: 420px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 60px auto;
+    cursor: pointer;
+    transition: 0.6s ease;
+    font-family: 'Audiowide', cursive;
+}
+
+.ceo-card {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: cardReveal 0.8s ease forwards;
+}
+
+/* Stagger delay (must be greater than parent delay 0.5s) */
+.ceo-card:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.ceo-card:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.ceo-card:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+.ceo-card:nth-child(4) {
+    animation-delay: 1.9s;
+}
+
+@keyframes cardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image */
+.ceo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s ease;
+}
+
+/* Neon Border Effect */
+.ceo-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(45deg, #2ecc71, transparent, #2ecc71);
+    background-size: 300% 300%;
+    animation: borderMove 4s linear infinite;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Overlay Glass Effect */
+.ceo-overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 40%,
+            rgba(0, 0, 0, 0.2) 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+
+    transition: 0.6s ease;
+}
+
+/* Name */
+.ceo-name {
+    color: #2ecc71;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+/* Role */
+.ceo-role {
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+/* Button */
+.ceo-btn {
+    padding: 10px 28px;
+    background: #2ecc71;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s ease;
+}
+
+/* ===============================
+   HOVER EFFECTS
+================================= */
+/* Remove image dark effect */
+.ceo-card:hover img {
+    transform: scale(1.08);
+    /* slight zoom only */
+    filter: none;
+    /* remove brightness */
+}
+
+/* Light transparent overlay */
+.ceo-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.55) 25%,
+            rgba(0, 0, 0, 0.05) 80%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+
+    transition: 0.5s ease;
+}
+
+/* REMOVE blur */
+.ceo-overlay {
+    backdrop-filter: none;
+}
+
+.ceo-card:hover .ceo-name,
+.ceo-card:hover .ceo-role,
+.ceo-card:hover .ceo-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Button Glow */
+.ceo-btn:hover {
+    box-shadow: 0 0 20px #2ecc71;
+}
+
+/* Animated Border */
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+    .ceo-card {
+        width: 90%;
+        height: 380px;
+    }
+}
+
+/* ===============================
+   CEO CONTAINER
+================================= */
+.ceo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: nowrap;
+    /* 4 in one row */
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 1200px) {
+    .ceo-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ceo-card {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ceo-card {
+        max-width: 100%;
+    }
+}

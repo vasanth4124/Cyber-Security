@@ -1,0 +1,224 @@
+.head1-service {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: 'Audiowide', cursive;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: 5px;
+}
+
+/* ===============================
+   CONTAINER (Responsive Layout)
+================================= */
+
+.vapt-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 30px 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vapt-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vapt-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* ===============================
+   CARD DESIGN
+================================= */
+
+.vapt-card {
+    width: 320px;
+    padding: 30px;
+    border: 1px solid #222;
+    background: #111;
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Gradient Animated Border */
+.vapt-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(45deg, #00ffcc, #0077ff, #00ffcc);
+    background-size: 300% 300%;
+    animation: borderMove 6s linear infinite;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Card Hover */
+.vapt-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
+}
+
+/* ===============================
+   H3 EFFECT
+================================= */
+
+.head3 {
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Change h3 when hovering card */
+.vapt-card:hover .head3 {
+    color: #00ffcc;
+    transform: scale(1.05);
+}
+
+/* Change h3 when button hovered */
+.vapt-card:has(.vapt-button:hover) .head3 {
+    color: #0077ff;
+}
+
+/* ===============================
+   BUTTON (Transparent Style)
+================================= */
+
+.vapt-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+    text-decoration: none;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    font-family: 'Audiowide', cursive;
+}
+
+/* Show button when card hovered */
+.vapt-card:hover .vapt-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover fill effect */
+.vapt-button:hover {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+/* ===============================
+   ANIMATION STYLE 1
+   (Left → Right Stagger)
+================================= */
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.vapt-container.left-animate .vapt-card {
+    opacity: 0;
+    animation: slideLeft 0.8s ease forwards;
+}
+
+.vapt-container.left-animate .vapt-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.vapt-container.left-animate .vapt-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.vapt-container.left-animate .vapt-card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+/* ===============================
+   ANIMATION STYLE 2
+   (Alternate Direction)
+================================= */
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.vapt-container.alt-animate .vapt-card {
+    opacity: 0;
+}
+
+.vapt-container.alt-animate .vapt-card:nth-child(1) {
+    animation: slideFromLeft 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.vapt-container.alt-animate .vapt-card:nth-child(2) {
+    animation: slideFromRight 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.vapt-container.alt-animate .vapt-card:nth-child(3) {
+    animation: slideFromLeft 0.8s ease forwards;
+    animation-delay: 0.8s;
+}

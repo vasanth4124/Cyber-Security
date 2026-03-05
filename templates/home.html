@@ -3,16 +3,62 @@
 
 {% block content %}
 
-    <div>
+    <!-- <div class="video-container">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'video/bg.mp4' %}" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
         <center class="head-main">
-            <h1 class="head">SECURING THE <br>
-                DIGITAL WORLD</h1>
-            <p class="para">Elite cybersecurity solutions for the modern enterprise. VAPT, SOC, and advanced threat
-                defense.</p>
-            <a href="" class="cyber-btn">GET SECURITY ADUIT</a>
-            <a href="" class="contact-btn">CONTACT US</a>
+            <h1 class="head">SECURING THE <br> DIGITAL WORLD</h1>
+            <p class="para">
+                Elite cybersecurity solutions for the modern enterprise.
+                VAPT, SOC, and advanced threat defense.
+            </p>
+            <a href="#" class="cyber-btn">GET SECURITY AUDIT</a>
+            <a href="#" class="contact-btn">CONTACT US</a>
         </center>
-    </div><br><br><br><br><br>
+    </div>
+
+</div> -->
+
+<div class="video-container">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'video/bg.mp4' %}" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content Wrapper -->
+    <div class="content">
+
+        <!-- LEFT SIDE -->
+        <div class="left-content">
+            <h1 class="head">SECURING THE <br> DIGITAL WORLD</h1>
+
+            <p class="para">
+                Elite cybersecurity solutions for the modern enterprise.
+                VAPT, SOC, and advanced threat defense.
+            </p>
+
+            <div class="btn-group">
+                <a href="#" class="cyber-btn">GET SECURITY AUDIT</a>
+                <a href="#" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-content">
+            <img src="{% static 'images/image.png' %}" alt="Cyber Security">
+        </div>
+
+    </div>
+
+</div>
+    <br><br><br><br><br>
 
     <center>
         <h1 class="head1">CORE <span>DEFENSES
